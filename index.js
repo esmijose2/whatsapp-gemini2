@@ -1,9 +1,16 @@
-
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const express = require('express'); // Añadido
 
-const genAI = new GoogleGenerativeAI("AIzaSyApMi70tQpr3Pq7d8Lb4cxnYF7EmUdcHx4");
+// --- MINI SERVIDOR PARA BACK4APP ---
+const app = express();
+const port = process.env.PORT || 8080;
+app.get('/', (req, res) => res.send('Bot funcionando ✅'));
+app.listen(port, () => console.log(`Servidor en puerto ${port}`));
+// ----------------------------------
+
+const genAI = new GoogleGenerativeAI("TU_API_KEY_AQUI");
 const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
 const client = new Client({
