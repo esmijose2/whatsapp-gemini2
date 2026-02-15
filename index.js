@@ -10,8 +10,8 @@ app.get('/', (req, res) => res.send('Bot funcionando ✅'));
 app.listen(port, () => console.log('Puerto de salud abierto en ' + port));
 
 // --- CONFIGURACIÓN GEMINI ---
-const genAI = new GoogleGenerativeAI("TU_API_KEY_AQUI");
-const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+const genAI = new GoogleGenerativeAI("AIzaSyApMi70tQpr3Pq7d8Lb4cxnYF7EmUdcHx4");
+const model = genAI.getGenerativeModel({ model: "gemini-3.0-flash" });
 
 const client = new Client({
     authStrategy: new LocalAuth(),
